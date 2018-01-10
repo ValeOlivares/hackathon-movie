@@ -9,48 +9,39 @@ $(document).ready(function(){
 function getMovies(searchText){
   axios.get('http://www.omdbapi.com?s='+searchText+'&apikey=b3cb4e7')
     .then(function(response){
-   //   console.log(response);
+    //console.log(response);
       let movies = response.data.Search;
-     var jaja = [];
-      for (var i in movies){
-        jaja.push(movies[i]);
-      }
-      console.log('unicornio', movies);
+      //console.log('unicornio', movies);
       
-      var jojo = []; 
-      for(var j = 0; j < jaja.length ; j++){
-        jojo.push(jaja[j].imdbID);
+      var ids = []; 
+      for(var j = 0; j < movies.length ; j++){
+        ids.push(movies[j].imdbID);
       }
-      console.log('id', jojo);
+      //console.log('id', jojo);
 
-      for(var k = 0; k< jojo.length; k++){
+      for(var k = 0; k< ids.length; k++){
         var idMovie =[];
         var infoMovie = [];
         var awardedMovie = [];
-        axios.get('http://www.omdbapi.com?i='+jojo[k]+'&apikey=b3cb4e7').then(function(response){
-          //  console.log('response', response);
-
+        axios.get('http://www.omdbapi.com?i='+ids[k]+'&apikey=b3cb4e7').then(function(response){
+          //console.log('response', response);
           infoMovie.push(response.data); 
-            console.log ('response data', infoMovie);
-      //      console.log('prueba', infoMovie[0].Awards);
+          //console.log ('response data', infoMovie);
+          //console.log('prueba', infoMovie[0].Awards);
 
           idMovie.push(response.data.imdbID);
-          console.log('ID', idMovie);
+          //console.log('ID', idMovie);
 
+        // Recorremos las películas para seleccionar solo las premiadas o nominadas al Oscar.
+          var awardedMovies = [];     
           for (var m = 0 ; m < infoMovie.length ; m++){
-            var awardeds = [];   
-            console.log('consu', infoMovie);         
-            if ((infoMovie[m].Awards).indexOf("Oscar") > 0){
-              awardeds.push(infoMovie[m]);
-          //    console.log('jojo',infoMovie); retorna todas las pelis consultadas
-              console.log('awardededed', awardeds);
-            }
-/*
-              let idid = response.data.imdbID;
-              console.log('leon', idid);*/
-              let output = '';
-              $.each(awardeds, function(index, movie){
+            if ((infoMovie[m].Awards).indexOf("Oscar") >= 0){
+              awardedMovies.push(infoMovie[m]);
+              //console.log('jojo',infoMovie); retorna todas las pelis consultadas
+              //console.log('awardededed', awardedMovies);
 
+              let output = '';
+              $.each(awardedMovies, function(index, movie){
                 output += `
                   <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
                     <div class="well text-center">
@@ -62,13 +53,13 @@ function getMovies(searchText){
                 `;
               });
               $('#movies').html(output);
-         /* }else{
+          }else{
               console.log('none');
-            }  */ 
-          }
-        })      
-      }
-    })
+          }   
+        }
+      })      
+    }
+  })
   .catch(function(err) {
     console.log(err);
   });
