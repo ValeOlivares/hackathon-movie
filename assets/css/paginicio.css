@@ -9,17 +9,24 @@
 	margin: 0;
 }
 
-.carousel-control{
-	margin-right: 0;
-}
-
-section{
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.no-margin{
+.navbar{
+	background-color: black;
+	padding-bottom: 2%;
 	margin-bottom: 0;
-	padding-bottom: 0;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-radius: none;
+}
+
+.logo-first{
+	width: 45%;
+	height: auto;
+	margin-bottom: 10%;
+	padding-bottom: 10%;
+}
+
+.links{
+	padding-top: 5%;
 }
