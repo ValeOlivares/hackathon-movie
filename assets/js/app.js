@@ -67,7 +67,7 @@ function getMovies(searchText){
 
 function movieSelected(id){
   sessionStorage.setItem('movieId', id);
-  window.location = 'moviepage.html';
+  window.location = 'indexprueba2.html';
   return false;
 }
 
