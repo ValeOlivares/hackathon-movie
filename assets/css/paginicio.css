@@ -1,0 +1,25 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.img-slider{
+	width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.carousel-control{
+	margin-right: 0;
+}
+
+section{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.no-margin{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
