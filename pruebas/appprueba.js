@@ -4,11 +4,6 @@ $(document).ready(function(){
     getMovies(searchText);
     e.preventDefault();
   });
-
-$('.stars').on('click', '.star', function() {
-  $(this).siblings('.pick').removeClass('pick');
-  $(this).addClass('pick');
-});
 });
 
 function getMovies(searchText){
@@ -191,3 +186,8 @@ function show(){
   var show = document.getElementById('show');
   show.innerHTML = '<a href="#">Profile</a>';
 }
+
+$('.stars').on('click', '.star', function() {
+  $(this).siblings('.pick').removeClass('pick');
+  $(this).addClass('pick');
+});

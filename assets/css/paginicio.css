@@ -35,3 +35,65 @@
 	padding-top: 2%;
 	background-color: black;
 }
+
+/* TAMAÑO IMAGENES FILTRO*/
+
+#movies img, #movie img{
+	width: 100%;
+}
+#movies .col-md-3 .well{
+  height: 450px;
+}
+/* FIN TAMAÑO IMAGENES*/
+
+/* INICIO RATING */
+.stars {
+	height: 4em;
+	width: 20em;
+	
+	background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3Y2VmYSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZWU4MmVlIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzcxNTg1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  }
+  .stars.s2 {
+	background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FkZmYyZiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmZhNTAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGMxNDNjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+	background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #fdff79), color-stop(50%, #ffdf28), color-stop(100%, #ffbb00));
+	background: -moz-linear-gradient(left, #fdff79, #ffdf28, #ffbb00);
+	background: -webkit-linear-gradient(left, #fdff79, #ffdf28, #ffbb00);
+	background: linear-gradient(to right, #fdff79, #ffdf28, #ffbb00);
+  }
+  .stars:hover .star {
+	background-color: transparent;
+  }
+  .stars .star {
+	background-image: url("https://s.cdpn.io/2361/whitestarbigtilt.png");
+	height: 100%;
+	width: 4em;
+	float: left;
+	cursor: pointer;
+  }
+  .stars .star.half {
+	width: 1.7em;
+  }
+  .stars .star.half:nth-child(2n) {
+	background-position: right;
+	width: 2.3em;
+  }
+  
+  .pick ~ .star, .star:hover ~ .star {
+	background-color: #c0c0c0;
+  }
+  
+  html {
+	font-size: 10px;
+  }
+  
+  .stars {
+	font-size: 10px;  
+	margin: -6em -10em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+  }
+  .stars.s2 {
+	margin-top: -2em;
+  }
+/* FIN RATING */
