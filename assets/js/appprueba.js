@@ -114,3 +114,64 @@ function getMovie(){
       console.log(err);
     });
 }
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAh8jLxKg9BALWSaYIiUBk-vXnRa_4gu4I",
+  authDomain: "hackathon-movies.firebaseapp.com",
+  databaseURL: "https://hackathon-movies.firebaseio.com",
+  projectId: "hackathon-movies",
+  storageBucket: "hackathon-movies.appspot.com",
+  messagingSenderId: "215425576358"
+};
+  firebase.initializeApp(config);
+
+//crear usuarios nuevos
+function logIn(){
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+  }
+
+function signUp(){
+  var email1 = document.getElementById('email1').value;
+  var password1 = document.getElementById('password1').value;
+  firebase.auth().signInWithEmailAndPassword(email1, password1).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+  }
+
+function observador(){
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    show();
+  // User is signed in.
+  var displayName = user.displayName;
+  var email = user.email;
+  var emailVerified = user.emailVerified;
+  var photoURL = user.photoURL;
+  var isAnonymous = user.isAnonymous;
+  var uid = user.uid;
+  var providerData = user.providerData;
+  // ...
+  } else {
+  // User is signed out.
+  // ...
+  }
+});
+}
+observador();
+
+function show(){
+  var show = document.getElementById('show');
+  show.innerHTML = '<a href="#">Profile</a>';
+}
