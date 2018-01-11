@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 // INICIO FILTRO PELICULAS
 function getMovies(searchText){
-  axios.get('http://www.omdbapi.com?s='+searchText+'&apikey=b3cb4e7')
+  axios.get('https://www.omdbapi.com?s='+searchText+'&apikey=b3cb4e7')
     .then(function(response){
     //console.log(response);
       let movies = response.data.Search;
@@ -36,7 +36,7 @@ function getMovies(searchText){
         var idMovie =[];
         var infoMovie = [];
         var awardedMovie = [];
-        axios.get('http://www.omdbapi.com?i='+ids[k]+'&apikey=b3cb4e7').then(function(response){
+        axios.get('https://www.omdbapi.com?i='+ids[k]+'&apikey=b3cb4e7').then(function(response){
           //console.log('response', response);
           infoMovie.push(response.data); 
           //console.log ('response data', infoMovie);
@@ -86,7 +86,7 @@ function movieSelected(id){
 
 function getMovie(){
   let movieId = sessionStorage.getItem('movieId');  
-  axios.get('http://www.omdbapi.com?i='+movieId+'&apikey=b3cb4e7')
+  axios.get('https://www.omdbapi.com?i='+movieId+'&apikey=b3cb4e7')
     .then(function(response){
       console.log(response);
       let movie = response.data;
@@ -127,7 +127,7 @@ function getMovie(){
             <h3>Plot</h3>
             ${movie.Plot}
             <hr>
-            <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
+            <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
             <a href="index.html" class="btn btn-default">Go Back To Search</a>
           </div>
         </div>
@@ -143,3 +143,91 @@ function getMovie(){
 // FIN FILTRO PELICULAS
 
 
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAh8jLxKg9BALWSaYIiUBk-vXnRa_4gu4I",
+  authDomain: "hackathon-movies.firebaseapp.com",
+  databaseURL: "https://hackathon-movies.firebaseio.com",
+  projectId: "hackathon-movies",
+  storageBucket: "hackathon-movies.appspot.com",
+  messagingSenderId: "215425576358"
+};
+  firebase.initializeApp(config);
+
+//Registrarse con email
+function create(){
+  //console.log('diste un click')
+  var email = document.getElementById('email').value; //rescatando valor
+  var password = document.getElementById('password').value;
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorCode);
+  console.log(error.message);
+  // ...
+  });
+}
+
+function enter(){
+  var email2 = document.getElementById('email2').value; //rescatando valor
+  var password2 = document.getElementById('password2').value;
+  firebase.auth().signInWithEmailAndPassword(email2, password2).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorCode);
+  console.log(error.message);
+  // ...
+});
+}
+
+//ejecuta acciones dependiendo si el user esta o no logeado
+function watcher(){
+  firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log('Existe usuario activo');
+    showLogOut();
+    showProfile();
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    // ...
+  } else {
+    // User is signed out.
+    /*location.reload();*/
+    console.log('No hay usuario');
+    // ...
+  }
+});
+}
+ watcher();
+
+//mostrar Log out solo cuando este iniciada la sesión
+function showLogOut(){
+  var show = document.getElementById('show');
+  show.innerHTML = '<a href="#" onclick="getOut()">Log out</a>';
+}
+
+//mostrar Perfil
+function showProfile(){
+  var profile = document.getElementById('profile');
+  profile.innerHTML = '<a href="#">Profile</a>';
+}
+
+//deslogear
+function getOut(){
+  firebase.auth().signOut()
+  .then(function(){
+    console.log('Saliendo....')
+  })
+  .catch(function(error){
+    console.log(error)  
+  })
+  location.reload(); //actualiza para que al deslogear desaparesca Profile y Log out 
+}
