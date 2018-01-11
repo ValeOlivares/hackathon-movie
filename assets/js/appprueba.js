@@ -4,6 +4,11 @@ $(document).ready(function(){
     getMovies(searchText);
     e.preventDefault();
   });
+
+$('.stars').on('click', '.star', function() {
+  $(this).siblings('.pick').removeClass('pick');
+  $(this).addClass('pick');
+});
 });
 
 function getMovies(searchText){
@@ -94,6 +99,18 @@ function getMovie(){
               <li class="list-group-item"><strong>Writer:</strong> ${movie.Writer}</li>
               <li class="list-group-item"><strong>Actors:</strong> ${movie.Actors}</li>
               <li class="list-group-item"><strong>Awards:</strong> ${movie.Awards}</li>
+              <li class="list-group-item"><strong>Your rating</strong><div class="stars s2">
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half"></div>
+              <div class="star half pick"></div>
+              <div class="star half"></div>
+            </div></li>
             </ul>
           </div>
         </div>
