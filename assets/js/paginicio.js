@@ -9,13 +9,6 @@ $(document).ready(function() {
   $('.carousel').carousel({
     interval: 4000
   })
-
-  // INICIO RATING
-  $('.stars').on('click', '.star', function() {
-    $(this).siblings('.pick').removeClass('pick');
-    $(this).addClass('pick');
-  });
-  // FIN RATING  
 });
 
 // INICIO FILTRO PELICULAS
@@ -94,7 +87,9 @@ function getMovie(){
       let output =`
         <div class="row">
           <div class="col-md-4">
-            <img src="${movie.Poster}" class="thumbnail">
+          <ul>
+            <li class="list-group-item"><img src="${movie.Poster}" class="thumbnail"></li>
+          </ul>            
           </div>
           <div class="col-md-8">
             <h2>${movie.Title}</h2>
@@ -107,28 +102,12 @@ function getMovie(){
               <li class="list-group-item"><strong>Writer:</strong> ${movie.Writer}</li>
               <li class="list-group-item"><strong>Actors:</strong> ${movie.Actors}</li>
               <li class="list-group-item"><strong>Awards:</strong> ${movie.Awards}</li>
-              <li class="list-group-item"><strong>Your rating</strong><div class="stars s2">
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half"></div>
-              <div class="star half pick"></div>
-              <div class="star half"></div>
-            </div></li>
+              <li class="list-group-item"><strong>Plot:</strong> ${movie.Plot}
+              <hr>
+              <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
+              <a href="index.html" class="btn btn-default">Go Back To Search</a></li>
+              
             </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="well">
-            <h3>Plot</h3>
-            ${movie.Plot}
-            <hr>
-            <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-            <a href="index.html" class="btn btn-default">Go Back To Search</a>
           </div>
         </div>
       `;
@@ -231,3 +210,25 @@ function getOut(){
   })
   location.reload(); //actualiza para que al deslogear desaparesca Profile y Log out 
 }
+
+
+  // INICIO RATING
+  $('.stars').on('click', '.star', function() {
+    $(this).siblings('.pick').removeClass('pick');
+    $(this).addClass('pick');
+  });
+  // FIN RATING  
+
+  // INICIO THUMBS
+  var up = $('.thumbsUp');
+  var down = $('.thumbsDown');
+
+  up.click(function(){
+    $(this).toggleClass('colorOrange');
+    down.removeClass('colorOrange');
+  })
+  down.click(function(){
+    $(this).toggleClass('colorOrange');
+    up.removeClass('colorOrange');
+  })
+  // FIN THUMBS

@@ -88,16 +88,29 @@
   
   .stars {
 	font-size: 10px;  
-	margin: -6em -10em;
-	position: absolute;
-	left: 50%;
-	top: 50%;
   }
   .stars.s2 {
-	margin-top: -2em;
+  margin-top: -2em;
+  margin-left: 13em;
   }
 /* FIN RATING */
+
 /*inicio rated*/
 .rated{
 	background-color: #000;
+}
+
+
+
+/* INICIO THUMBS*/
+.thumbsUp, .thumbsDown{
+  color: gray;
+  font-size: 2.5em;
+}
+.thumbsUp{
+  margin-left: 0.5em;  
+}
+
+.colorOrange{
+  color: orange;
 }
