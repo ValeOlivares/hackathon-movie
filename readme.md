@@ -32,3 +32,9 @@ Día 2
 
 Primer sketch
 ![img](https://i.imgur.com/BerFbTX.jpg)
+
+Perfil final
+![img](https://i.imgur.com/f2x1hSY.jpg)
+
+Sketch final
+![img](https://i.imgur.com/aHD3T24.jpg)
