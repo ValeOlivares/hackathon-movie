@@ -105,7 +105,7 @@ function getMovie(){
               <li class="list-group-item"><strong>Plot:</strong> ${movie.Plot}
               <hr>
               <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-              <a href="index.html" class="btn btn-default">Go Back To Search</a></li>
+              <a href="paginicio.html" class="btn btn-default">Go Back To Search</a></li>
               
             </ul>
           </div>
