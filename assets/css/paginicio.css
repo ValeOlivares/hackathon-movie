@@ -135,12 +135,12 @@ textarea {
 
 /* Estilos botón agregar */
 #btn {
-	background-color: #66AEC7;
-	border: 0px;
+	background-color: #ffdf28;
+	border: 1px solid #ffbb00;
 	cursor: pointer;
 	text-align: center;
 	margin: 1em auto;
-	color: #FFF;
+	color: #000;
 }
 
 #btn:hover {
