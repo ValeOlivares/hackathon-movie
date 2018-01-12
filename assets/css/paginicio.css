@@ -100,17 +100,105 @@
 	background-color: #000;
 }
 
-
-
 /* INICIO THUMBS*/
 .thumbsUp, .thumbsDown{
   color: gray;
   font-size: 2.5em;
 }
-.thumbsUp{
-  margin-left: 0.5em;  
+.thumbsDown{
+  margin: 0 0.5em;  
 }
 
-.colorOrange{
-  color: orange;
+.yellowColor{
+  color: #fdff79;
 }
+
+.orangeColor{
+  color: #ffbb00;
+}
+
+/* FIN THUMBS*/
+
+/* INICIO AGREGAR COMENTARIOS */
+
+textarea {
+	width: 100%;
+	height: 4em;
+	color: #4E4D53;
+	font-size: 15px;
+	padding: 1em;
+	border: none;
+  margin: 0 auto;
+  overflow: hidden;
+  resize: none;
+}
+
+/* Estilos botón agregar */
+#btn {
+	background-color: #66AEC7;
+	border: 0px;
+	cursor: pointer;
+	text-align: center;
+	margin: 1em auto;
+	color: #FFF;
+}
+
+#btn:hover {
+	background-color: #5590A6;
+}
+
+#btn:focus, textarea:focus{
+	outline: none;
+}
+
+/* Estilos contenedor comentarios */
+#cont {
+	border-radius: 0.4em;
+	margin: 0 auto;
+	color: #4E4D53;
+	text-align: left;
+	margin-bottom: 3em;
+}
+
+#cont div {
+	padding: 1.5em 0.5em;
+	margin-bottom: 1em;
+	outline: 0.1em solid #E5E3F2;
+	background-color: white;
+}
+
+.nameUser{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.said{
+  font-size: 0.9em;  
+}
+
+.datePost{
+  float: right;
+  font-size: 0.9em;
+  color: lightgray;
+}
+
+.textPost{
+  margin: 1em;
+}
+
+.heart, .trash {
+	margin: 0 1em;
+	float: right;
+	cursor: pointer;
+}
+
+.trash:hover {
+	color: #1DA1F2;
+	cursor: pointer;
+}
+
+.redColor{
+  color: red;
+}
+
+/* FIN AGREGAR COMENTARIOS */

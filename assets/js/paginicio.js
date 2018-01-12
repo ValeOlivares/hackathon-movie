@@ -211,7 +211,6 @@ function getOut(){
   location.reload(); //actualiza para que al deslogear desaparesca Profile y Log out 
 }
 
-
   // INICIO RATING
   $('.stars').on('click', '.star', function() {
     $(this).siblings('.pick').removeClass('pick');
@@ -224,11 +223,30 @@ function getOut(){
   var down = $('.thumbsDown');
 
   up.click(function(){
-    $(this).toggleClass('colorOrange');
-    down.removeClass('colorOrange');
+    $(this).toggleClass('orangeColor');
+    down.removeClass('yellowColor');
   })
   down.click(function(){
-    $(this).toggleClass('colorOrange');
-    up.removeClass('colorOrange');
+    $(this).toggleClass('yellowColor');
+    up.removeClass('orangeColor');
   })
   // FIN THUMBS
+
+  // INICIO AGREGAR COMENTARIOS
+
+  $('#btn').click(function(){
+    var comentario = $('#comment').val();
+    $('#comment').val("");
+    var contenedor = $('#cont');
+    contenedor.prepend('<div class="col-md-8 col-md-offset-4 colPost"><span class="nameUser">Vale </span>' + 
+                       '<span class="said"> said...</span>' + '<span class="datePost">' + moment().format("MMM Do YY, H:mm:ss") + '</span>' + 
+                       '<p class="textPost">' + comentario + 
+                       '</p><i class="fa fa-trash trash"></i><i class="fa fa-heart heart"></i></div>');
+    $('.heart').click(function(){
+      $(this).toggleClass('redColor');
+    });
+    $('.trash').click(function(){
+      $(this).parent().remove();
+    })
+  }); 
+  // FIN AGREGAR COMENTARIOS
