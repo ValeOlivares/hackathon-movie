@@ -80,3 +80,25 @@ blockquote{
 .interests{
 	background-color: black;
 }
+
+.btn-primary{
+	background-color: white;
+	border: none;
+	color: black;
+}
+
+.btn-primary:hover{
+	background-color: grey;
+	border: none;
+	color: black;	
+}
+
+.caption h4{
+	background-color: black;
+	color: white;
+}
+
+.thumbnail{
+	background-color: black;
+	color: white;
+}
