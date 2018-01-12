@@ -1,0 +1,15 @@
+body {
+	background-color: #000;
+}
+
+.btn-primary {
+	background-color: #ffdf28;
+	border: 1px solid #ffbb00 ;
+	color: #000;
+}
+
+#btn {
+	background-color: #ffdf28;
+	border: 1px solid #ffbb00 ;
+	color: #000;
+}
