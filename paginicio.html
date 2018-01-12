@@ -30,93 +30,15 @@
         <div class="container">
           <div id="navbar" class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav links">
-              <li><a href="#signUp" data-toggle="modal">Sign up</a></li>
-              <li><a href="#logIn" data-toggle="modal" >Log in</a></li>
-              <li id="profile"></li>
-              <li><a href="#">Your votes</a></li>
+              <li><a href="profile.html"> Profile</a></li>
               <li><a href="#">Settings</a></li>
-              <li id="show"></li>
+              <li><a href="#" onclick="getOut()">Log out</a></li>
             </ul>
           </div>
         </div>
       </div>
     </nav>
   </header>
-  <!-- modal para Registrar -->
-
-   <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <form role="form">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="email " placeholder="Login">
-                  <label for="email" class="input-group-addon glyphicon glyphicon-user"></label>
-                </div>
-              </div> 
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-                  <label for="password" class="input-group-addon glyphicon glyphicon-lock"></label>
-                </div> 
-              </div> 
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Remember me
-                </label>
-              </div> 
-            </form>
-          </div> 
-          <div class="modal-footer">
-            <button class="form-control btn btn-primary" onclick="create()" data-dismiss= "modal">Log in</button>
-            <div class="progress">
-              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
-                <span class="sr-only">progress</span>
-              </div>
-            </div>
-          </div> 
-        </div>
-      </div>
-    </div>  
-
-    <!-- modal para ingresar -->
-    <div class="modal fade" id="logIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <form role="form">
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="text" class="form-control" id="email2" placeholder="Login">
-                  <label for="email" class="input-group-addon glyphicon glyphicon-user"></label>
-                </div>
-              </div> 
-              <div class="form-group">
-                <div class="input-group">
-                  <input type="password" class="form-control" id="password2" placeholder="Password">
-                  <label for="password" class="input-group-addon glyphicon glyphicon-lock"></label>
-                </div> 
-              </div> 
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Remember me
-                </label>
-              </div> 
-            </form>
-          </div> 
-          <div class="modal-footer">
-            <button class="form-control btn btn-primary" onclick="enter()" data-dismiss= "modal">Log in</button>
-            <div class="progress">
-              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
-                <span class="sr-only">progress</span>
-              </div>
-            </div>
-          </div> 
-        </div>
-      </div>
-    </div>
-
   <section>
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->

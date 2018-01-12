@@ -45,7 +45,7 @@ function  watcher(){
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log('Existe usuario activo');
-    location.href ="paginicio.html";
+    location.href ="paginicio.html"; //envia a la pagina de inicio solo si se esta logeado
     // User is signed in.
     var displayName = user.displayName;
     var email = user.email;
@@ -57,6 +57,7 @@ function  watcher(){
     // ...
   } else {
     console.log('No existe usuario activo')
+
     // User is signed out.
     // ...
   }
