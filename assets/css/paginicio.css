@@ -184,6 +184,7 @@ textarea {
 
 .textPost{
   margin: 1em;
+  color:#000 !important; 
 }
 
 .heart, .trash {
