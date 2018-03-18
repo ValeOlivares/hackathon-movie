@@ -36,6 +36,18 @@
 	background-color: black;
 }
 
+.btn-primary{
+	background-color: #ffdf28;
+	border: 1px solid #ffbb00 ;
+	color: #000;
+}
+
+.btn-primary:hover {
+	background-color: #ffbb00;
+	color: #fff;
+	border: 1px solid #ffbb00;
+}
+
 /* TAMAÑO IMAGENES FILTRO*/
 
 #movies img, #movie img{
@@ -144,7 +156,9 @@ textarea {
 }
 
 #btn:hover {
-	background-color: #5590A6;
+	background-color: #ffbb00;
+	color: #fff;
+	border: 1px solid #ffbb00;
 }
 
 #btn:focus, textarea:focus{
