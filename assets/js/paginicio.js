@@ -48,7 +48,7 @@ function getMovies(searchText) {
               let output = '';
               $.each(awardedMovies, function(index, movie) {
                 output += `
-                  <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+                  <div class="col-md-4 col-xs-12 col-lg-4 col-sm-6">
                     <div class="well text-center">
                       <img src="${movie.Poster}" class="img-responsive">
                       <h5>${movie.Title}</h5>
@@ -87,7 +87,7 @@ function getMovie() {
         <div class="row">
           <div class="col-md-4">
           <ul>
-            <li class="list-group-item"><img src="${movie.Poster}" class="thumbnail"></li>
+            <li class="list-group-item"><img src="${movie.Poster}" class="img-responsive"></li>
           </ul>            
           </div>
           <div class="col-md-8">
@@ -136,7 +136,8 @@ firebase.initializeApp(config);
 function watcher() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      console.log('Existe usuario activo');
+      console.log(user);
+      console.log('Existe usuario activooooo');
       // User is signed in.
       var displayName = user.displayName;
       var email = user.email;
@@ -145,12 +146,15 @@ function watcher() {
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
+      console.log('jaja', email);
+      console.log('jiji', displayName);
+      
       // ...
     } else {
     // User is signed out.
     /* location.reload();*/
       console.log('No hay usuario');
-      location.href = 'loginpage.html'; // vuelve a la pagina de inicio si se deslogea
+      location.href = 'index.html'; // vuelve a la pagina de inicio si se deslogea
     // ...
     }
   });
@@ -159,13 +163,12 @@ watcher();
 
 // deslogear
 function getOut() {
-  firebase.auth().signOut()
-    .then(function() {
-      console.log('Saliendo....');
-    })
+  firebase.auth().signOut().then(function() {
+    console.log('Saliendo....');
+  })
     .catch(function(error) {
       console.log(error);  
-    });
+    });    
   location.reload(); // actualiza para que al deslogear desaparesca Profile y Log out 
 }
 

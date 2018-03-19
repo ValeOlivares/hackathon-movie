@@ -34,6 +34,7 @@
 .search-bar{
 	padding-top: 2%;
 	background-color: black;
+	min-height: 100vh;
 }
 
 .btn-primary{
@@ -48,13 +49,19 @@
 	border: 1px solid #ffbb00;
 }
 
+.btn-primary:focus{
+	background-color: gray;
+	color: black;
+}
+
 /* TAMAÑO IMAGENES FILTRO*/
 
 #movies img, #movie img{
 	width: 100%;
 }
-#movies .col-md-3 .well{
-  height: 450px;
+.well{
+	min-height: 450px;
+	/* height: 580px; */
 }
 /* FIN TAMAÑO IMAGENES*/
 
@@ -218,6 +225,7 @@ textarea {
 .thumbnail{
 	background-color: black;
 	color: white;
+	height: 80vh;
 }
 
 .thumbnail, h3, p{
