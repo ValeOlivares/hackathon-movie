@@ -34,6 +34,24 @@
 .search-bar{
 	padding-top: 2%;
 	background-color: black;
+	min-height: 100vh;
+}
+
+.btn-primary{
+	background-color: #ffdf28;
+	border: 1px solid #ffbb00 ;
+	color: #000;
+}
+
+.btn-primary:hover {
+	background-color: #ffbb00;
+	color: #fff;
+	border: 1px solid #ffbb00;
+}
+
+.btn-primary:focus{
+	background-color: gray;
+	color: black;
 }
 
 /* TAMAÑO IMAGENES FILTRO*/
@@ -41,8 +59,9 @@
 #movies img, #movie img{
 	width: 100%;
 }
-#movies .col-md-3 .well{
-  height: 450px;
+.well{
+	min-height: 450px;
+	/* height: 580px; */
 }
 /* FIN TAMAÑO IMAGENES*/
 
@@ -144,7 +163,9 @@ textarea {
 }
 
 #btn:hover {
-	background-color: #5590A6;
+	background-color: #ffbb00;
+	color: #fff;
+	border: 1px solid #ffbb00;
 }
 
 #btn:focus, textarea:focus{
@@ -204,6 +225,7 @@ textarea {
 .thumbnail{
 	background-color: black;
 	color: white;
+	height: 80vh;
 }
 
 .thumbnail, h3, p{

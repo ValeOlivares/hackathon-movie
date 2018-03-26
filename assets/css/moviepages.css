@@ -8,6 +8,12 @@ body {
 	color: #000;
 }
 
+.btn-primary:hover {
+	background-color: #ffbb00;
+	color: #fff;
+	border: 1px solid #ffbb00;
+}
+
 #btn {
 	background-color: #ffdf28;
 	border: 1px solid #ffbb00 ;
