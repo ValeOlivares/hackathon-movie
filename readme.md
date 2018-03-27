@@ -3,7 +3,7 @@
 ## ¿Qué es nominate?
 Nominate es una página web, optimizada para su uso en móviles también, enfocada en aquellas películas que han sido nominadas o ganadoras de premios de la Academia. En esta página es posible visualizar la información obtenida a través de OMDb, incluyendo actores, director y el poster oficial. El principal objetivo de nuestro producto es presentar una plataforma donde los usuarios puedan expresar su posición respecto a la decisión del jurado de los premios Oscars.
 
-![movie2](https://user-images.githubusercontent.com/32283958/37888214-735eea00-309c-11e8-8e75-5c018f5994ff.png)
+![movie2](https://github.com/ValeOlivares/hackathon-movie/blob/master/assets/img/Nominate.jpg?raw=true)
 
 ## ¿Cómo llegamos a la idea de este producto?
 Cada año crece la información y difusión de los premios de la Academia, que este año tendrán su versión 90° y que se celebrará el 4 de Marzo. Nos es común galardonear o interesarnos en aquellas películas nominadas y/o ganadoras de un premio otorgado por votación del jurado pero ¿cuál es la opinión que tiene el público objetivo de estas películas respecto a sus triunfos o derrotas?
